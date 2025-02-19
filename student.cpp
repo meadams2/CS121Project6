@@ -8,9 +8,12 @@
 
 Student::Student(){
 	Student::studentString = "";
+	Student::firstName = "";
+	Student::lastName = "";
 	Date birthDate;
 	Date gradDate;
 	Address address;
+	Student::creditHours = 0;
 } //end constructor
 
 Student::~Student(){
@@ -20,7 +23,11 @@ Student::~Student(){
 } //end destructor
 
 void Student::init(std::string studentString) {
+	Student::studentString = studentString;
+
+	/*
 	std::stringstream converter;
+
 
 	std::string name;
 	std::string sBirthDate;
@@ -30,7 +37,8 @@ void Student::init(std::string studentString) {
 	converter.clear();
 	converter.str(studentString);
 	
-	getline(converter, name, ',');
+	getline(converter, fName, ',');
+	getline(converter, lName, ',');
 	getline(converter, sAddress, ',');
 	getline(converter, sBirthDate, ',');
 	getline(converter, sGradDate);
@@ -46,5 +54,7 @@ void Student::init(std::string studentString) {
 	converter.clear();
 	converter.str(sGradDate);
 	converter >> gradDate.init(sGradDate);
-	
+	*/
 } //end init
+
+
