@@ -29,15 +29,15 @@ void Date::init(std::string dateString){
 
 	converter.clear();
 	converter.str(sMonth);
-	converter >> month;
+	converter >> Date::month;
 
 	converter.clear();
 	converter.str(sDay);
-	converter >> day;
+	converter >> Date::day;
 
 	converter.clear();
 	converter.str(sYear);
-	converter >> year;
+	converter >> Date::year;
 } // end init 
 
 void Date::printDate(){
