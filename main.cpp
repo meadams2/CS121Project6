@@ -1,19 +1,19 @@
 // Main.cpp 
 
 #include <iostream>
-#include "date.h"
+//#include "date.h"
 #include "address.h"
-#include "student.h"
+//#include "student.h"
 
 void testAddress();
-void testDate();
-void testStudent();
+//void testDate();
+//void testStudent();
 
 int main(){
 	std::cout << "Hello!" << std::endl;
 	testAddress();
-	testDate();
-	testStudent();
+//	testDate();
+//	testStudent();
 
 	return 0;
 } // end main
@@ -24,6 +24,7 @@ void testAddress(){
 	a.printAddress();
 } // end testAddress
 
+/*
 void testDate(){
 	Date d;
 	d.init("01/27/1997");
@@ -39,3 +40,4 @@ void testStudent(){
 	std::cout << student->getLastFirst();
 	delete student;
 } // end testStudent
+*/
