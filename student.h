@@ -19,11 +19,11 @@ class Student {
 	public:
 		Student();
 		~Student();
-		void init(studentString);
+		void init(std::string studentString);
 		void printStudent();
 		std::string getFirstName();
 		std::string getLastName();
-		int getCreditHours;
+		int getCreditHours();
 }; //end class def
 
 #endif 
