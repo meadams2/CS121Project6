@@ -11,9 +11,9 @@ Student::Student(){
 	Student::studentString = "";
 	Student::firstName = "";
 	Student::lastName = "";
-	Date birthDate;
-	Date gradDate;
-	Address address;
+	birthDate = new Date();
+	gradDate = new Date();
+	address = new Address();
 	Student::creditHours = 0;
 } //end constructor
 
@@ -60,15 +60,15 @@ void Student::init(std::string studentString) {
 
 	converter.clear();
 	converter.str(sAddress);
-	converter >> address->init(sAddress);
+	address->init(sAddress);
 	
 	converter.clear();
 	converter.str(sBirthDate);
-	converter >> birthDate->init(sBirthDate);
+	birthDate->init(sBirthDate);
 
 	converter.clear();
 	converter.str(sGradDate);
-	converter >> gradDate->init(sGradDate);
+	gradDate->init(sGradDate); 
 	
 	converter.clear();
 	converter.str(sCreditHours);
@@ -89,9 +89,12 @@ int Student::getCreditHours(){
 
 void Student::printStudent(){
 	std::cout << getFirstName() << " " << getLastName() << std::endl;
-	std::cout << address << std::endl; 
-	std::cout << "DOB: " << birthDate->printDate() << std::endl;
-	std::cout << "Grad: " << gradDate->printDate() << std::endl;
+	address->printAddress(); 
+	std::cout << std::endl;
+	std::cout << "DOB: ";
+	birthDate->printDate();
+	std::cout << "Grad: ";
+       	gradDate->printDate();
 	std::cout << "Credits: " << getCreditHours() << std::endl;
 	std::cout << getLastName() << "," << getFirstName() << std::endl;
 } // end printStudent
