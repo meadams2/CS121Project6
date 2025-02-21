@@ -30,10 +30,16 @@ void Student::init(std::string studentString) {
 	std::stringstream converter;
 
 
-	std::string name;
+	std::string firstName;
+	std::string lastName;
+
 	std::string sBirthDate;
 	std::string sGradDate;
-	std::string sAddress;
+
+	std::string sStreet;
+	std::string sCity;
+	std::string sState;
+	std::string sZip;
 	std::string sCreditHours;
 
 	Student::firstName;
@@ -45,7 +51,11 @@ void Student::init(std::string studentString) {
 	
 	getline(converter, firstName, ',');
 	getline(converter, lastName, ',');
-	getline(converter, sAddress, ',');
+	//getline(converter, sAddress, ',');
+	getline(converter, sStreet, ',');
+	getline(converter, sCity, ',');
+	getline(converter, sState, ',');
+	getline(converter, sZip, ',');
 	getline(converter, sBirthDate, ',');
 	getline(converter, sGradDate, ',');
 	getline(converter, sCreditHours);
@@ -58,9 +68,8 @@ void Student::init(std::string studentString) {
 	converter.str(lastName);
 	converter >> Student::lastName;
 
-	converter.clear();
-	converter.str(sAddress);
-	address->init(sAddress);
+	address->init(sStreet, sCity, sState, sZip);
+	
 	
 	converter.clear();
 	converter.str(sBirthDate);
@@ -83,6 +92,13 @@ std::string Student::getLastName(){
 	return lastName;
 } //end getLastName
 
+std::string Student::getLastFirst(){
+	std::stringstream converter;
+	converter << lastName << "," << firstName;
+	std::string lastFirst;
+	return lastFirst;
+} //end getLastFirst
+
 int Student::getCreditHours(){
 	return creditHours;
 } //end getCreditHours
@@ -96,5 +112,5 @@ void Student::printStudent(){
 	std::cout << "Grad: ";
        	gradDate->printDate();
 	std::cout << "Credits: " << getCreditHours() << std::endl;
-	std::cout << getLastName() << "," << getFirstName() << std::endl;
+	//std::cout << getLastName() << "," << getFirstName() << std::endl;
 } // end printStudent
