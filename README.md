@@ -41,4 +41,47 @@ std::cout << stringMonth << day << "," << year << std::endl;
 ```
 ## Address Class
 
+### printAddress()
+
+Constructor and init functions are obvious. 
+
+```
+Print street. New line.
+Print "<city>, <state>, <zip>". New line. 
+
+```
 ## Student Class
+
+Include string, sstream, iostream, date.h, address.h, student.h. 
+
+### Student()
+
+Initialize empty string values. 
+```
+studentString = ""
+firstName = ""
+lastName = ""
+```
+
+birthDate and gradDate are pointers to Date class. address is pointer to Address class. creditHours initialized to 0. 
+### ~Student()
+
+~Student() is the destructor. Delete gradDate, birthDate, and address.
+
+### init(studentString)
+
+Parse out firstName, lastName, street, city, state, zip, creditHours, birthDate, and gradDate into Student::firstName, Student::lastName, sStreet, sCity, sState, sZip, Student::creditHours, sBirthDate, sGradDate. 
+
+```
+address->init(sStreet, sCity, sState, sZip)
+birthDate->init(sBirthDate)
+gradDate->init(sGradDate)
+
+```
+
+### getLastFirst()
+
+Concatenate lastName + "," + firstName. 
+
+
+
