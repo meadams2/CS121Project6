@@ -93,9 +93,7 @@ std::string Student::getLastName(){
 } //end getLastName
 
 std::string Student::getLastFirst(){
-	std::stringstream converter;
-	converter << lastName << "," << firstName;
-	std::string lastFirst;
+	std::string lastFirst = lastName + "," + firstName;
 	return lastFirst;
 } //end getLastFirst
 

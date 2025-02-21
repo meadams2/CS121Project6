@@ -22,6 +22,8 @@ run: heap
 debug: heap
 	gdb heap
 
+valgrind: heap
+	valgrind ./heap
 git:
 	git status
 	git add .
